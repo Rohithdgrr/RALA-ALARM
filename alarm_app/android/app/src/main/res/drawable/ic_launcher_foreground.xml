@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#4A90D9"
+        android:pathData="M54,24C37.43,24 24,37.43 24,54C24,70.57 37.43,84 54,84C70.57,84 84,70.57 84,54C84,37.43 70.57,24 54,24Z"/>
+    
+    <!-- Inner White Circle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,30C41.85,30 32,39.85 32,52C32,64.15 41.85,74 54,74C66.15,74 76,64.15 76,52C76,39.85 66.15,30 54,30ZM54,68C45.16,68 38,60.84 38,52C38,43.16 45.16,36 54,36C62.84,36 70,43.16 70,52C70,60.84 62.84,68 54,68Z"/>
+    
+    <!-- Clock Center Dot -->
+    <path
+        android:fillColor="#4A90D9"
+        android:pathData="M54,52m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0"/>
+    
+    <!-- Hour Hand -->
+    <path
+        android:fillColor="#4A90D9"
+        android:pathData="M52,42L56,42L56,52L52,52Z"/>
+    
+    <!-- Minute Hand (Purple) -->
+    <path
+        android:fillColor="#7B68EE"
+        android:pathData="M52,40L56,40L56,44L52,44Z"
+        android:rotation="60"
+        android:pivotX="54"
+        android:pivotY="52"/>
+    
+    <!-- Alarm Bells (Left) -->
+    <path
+        android:fillColor="#7B68EE"
+        android:pathData="M32,38C29,38 26,41 26,45L30,45C30,43 31,42 32,42C33,42 34,43 34,45L38,45C38,41 35,38 32,38Z"/>
+    
+    <!-- Alarm Bells (Right) -->
+    <path
+        android:fillColor="#7B68EE"
+        android:pathData="M76,38C73,38 70,41 70,45L74,45C74,43 75,42 76,42C77,42 78,43 78,45L82,45C82,41 79,38 76,38Z"/>
+    
+    <!-- Top Button -->
+    <path
+        android:fillColor="#4A90D9"
+        android:pathData="M52,20L56,20L56,24L52,24Z"/>
+    
+    <!-- Highlight -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.3"
+        android:pathData="M40,40C40,40 45,35 50,35C55,35 58,38 58,38C58,38 52,32 46,32C40,32 35,36 35,36C35,36 38,42 40,42Z"/>
+
+</vector>
