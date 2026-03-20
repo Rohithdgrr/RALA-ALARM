@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f0fc5382-864f-4b28-a023-8c3ddeeaf4f2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/.filecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/aot_android_asset_bundle.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/aot_android_asset_bundle.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/app.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/arm64-v8a/app.so" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/arm64-v8a/app.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/armeabi-v7a/app.so" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/armeabi-v7a/app.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/dart_build_result.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/dart_build_result.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/flutter_assets.d" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/flutter_assets.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/kernel_snapshot_program.d" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/kernel_snapshot_program.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/kernel_snapshot_program.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/kernel_snapshot_program.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/outputs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/x86_64/app.so" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/3e67ecd9f0d683020166cb2d38545ef5/x86_64/app.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/dart_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/flutter_build/dart_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/.lock" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/dependencies.dependencies_hash_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/dependencies.dependencies_hash_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/hook.dependencies_hash_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/hook.dependencies_hash_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/416704f15e/stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/.lock" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/dependencies.dependencies_hash_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/dependencies.dependencies_hash_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/hook.dependencies_hash_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/hook.dependencies_hash_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/c880ffee80/stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/.lock" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/dependencies.dependencies_hash_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/dependencies.dependencies_hash_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/hook.dependencies_hash_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/hook.dependencies_hash_file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/stdout.txt" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/objective_c/e193a33053/stdout.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/shared/objective_c/.lock" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/hooks_runner/shared/objective_c/.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.dart_tool/package_graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.dart_tool/package_graph.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/android/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/android/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/providers/alarm_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/providers/alarm_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/screens/add_edit_alarm_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/screens/add_edit_alarm_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/screens/alarm_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/screens/alarm_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/screens/alarm_ringing_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/screens/alarm_ringing_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/screens/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/screens/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/services/alarm_sound_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/services/alarm_sound_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/services/notification_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/services/notification_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/lib/services/ringtone_picker_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/lib/services/ringtone_picker_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alarm_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/alarm_app/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/alarm_app" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3B2PViuaCbcXIQ1yXjR53Nbf8oq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rohit/Downloads/stitch/stitch&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f0fc5382-864f-4b28-a023-8c3ddeeaf4f2" name="Changes" comment="" />
+      <created>1773684217996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773684217996</updated>
+    </task>
+    <servers />
+  </component>
+</project>
