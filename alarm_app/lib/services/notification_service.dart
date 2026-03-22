@@ -97,28 +97,78 @@ class NotificationService {
       return;
     }
     
-    // Parse payload - format: "alarmId|label|time|snoozeMinutes|soundName"
+    // Parse payload - format: "alarmId|label|time|snoozeMinutes|soundName|soundPath"
     final parts = response.payload!.split('|');
     final alarmId = parts[0];
     final label = parts.length > 1 ? parts[1] : '';
     final time = parts.length > 2 ? parts[2] : '';
     final snoozeMinutes = parts.length > 3 ? int.tryParse(parts[3]) ?? 10 : 10;
     final soundName = parts.length > 4 ? parts[4] : 'Default';
+    final soundPath = parts.length > 5 ? parts[5] : '';
     
-    // Navigate to alarm ringing screen
-    navigatorKey.currentState?.pushAndRemoveUntil(
-      MaterialPageRoute(
-        builder: (context) => AlarmRingingScreen(
-          label: label,
-          time: time,
-          alarmId: alarmId,
-          snoozeMinutes: snoozeMinutes,
-          soundName: soundName,
+    // Navigate to alarm ringing screen - use pushAndRemoveUntil to avoid black screen
+    final state = navigatorKey.currentState;
+    if (state != null) {
+      state.pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (context) => AlarmRingingScreen(
+            label: label,
+            time: time,
+            alarmId: alarmId,
+            snoozeMinutes: snoozeMinutes,
+            soundName: soundName,
+            soundPath: soundPath,
+          ),
         ),
-      ),
-      (route) => route.isFirst,
-    );
+        (route) => route.settings.name == '/' || route.settings.name == '/home',
+      );
+    } else {
+      // Navigator not ready yet - store for later
+      debugPrint('Navigator not ready, will show alarm on next build');
+      _pendingAlarmId = alarmId;
+      _pendingLabel = label;
+      _pendingTime = time;
+      _pendingSnoozeMinutes = snoozeMinutes;
+      _pendingSoundName = soundName;
+      _pendingSoundPath = soundPath;
+    }
   }
+  
+  // Pending alarm data for cold start
+  String? _pendingAlarmId;
+  String? _pendingLabel;
+  String? _pendingTime;
+  int? _pendingSnoozeMinutes;
+  String? _pendingSoundName;
+  String? _pendingSoundPath;
+  
+  /// Check and show any pending alarm
+  void showPendingAlarm() {
+    if (_pendingAlarmId != null && navigatorKey.currentState != null) {
+      final state = navigatorKey.currentState!;
+      state.pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (context) => AlarmRingingScreen(
+            label: _pendingLabel ?? '',
+            time: _pendingTime ?? '',
+            alarmId: _pendingAlarmId!,
+            snoozeMinutes: _pendingSnoozeMinutes ?? 10,
+            soundName: _pendingSoundName ?? 'Default',
+            soundPath: _pendingSoundPath ?? '',
+          ),
+        ),
+        (route) => route.settings.name == '/' || route.settings.name == '/home',
+      );
+      _pendingAlarmId = null;
+      _pendingLabel = null;
+      _pendingTime = null;
+      _pendingSnoozeMinutes = null;
+      _pendingSoundName = null;
+      _pendingSoundPath = null;
+    }
+  }
+  
+  bool get hasPendingAlarm => _pendingAlarmId != null;
   
   void _handleDismiss(String payload) async {
     final parts = payload.split('|');
@@ -128,8 +178,11 @@ class NotificationService {
     await _notifications.cancel(alarmId.hashCode);
     await _notifications.cancelAll();
     
-    // Navigate to home
-    navigatorKey.currentState?.pushReplacementNamed('/home');
+    // Navigate to home safely - use pushNamedAndRemoveUntil to ensure clean stack
+    final state = navigatorKey.currentState;
+    if (state != null) {
+      state.pushNamedAndRemoveUntil('/home', (route) => false);
+    }
   }
   
   void _handleSnooze(String payload) async {
@@ -143,8 +196,11 @@ class NotificationService {
     // Schedule snooze
     await scheduleSnoozeAlarm(alarmId, snoozeMinutes);
     
-    // Navigate to home
-    navigatorKey.currentState?.pushReplacementNamed('/home');
+    // Navigate to home safely - use pushNamedAndRemoveUntil to ensure clean stack
+    final state = navigatorKey.currentState;
+    if (state != null) {
+      state.pushNamedAndRemoveUntil('/home', (route) => false);
+    }
   }
   
   static void _onBackgroundNotificationTapped(NotificationResponse response) {
@@ -152,10 +208,10 @@ class NotificationService {
   }
   
   /// Start timer to check for scheduled alarms (foreground safety net).
-  /// Kept lightweight to avoid performance/battery impact.
+  /// Check every 5 seconds to catch alarms within the minute window.
   void _startAlarmCheckTimer() {
     _alarmCheckTimer?.cancel();
-    _alarmCheckTimer = Timer.periodic(const Duration(seconds: 15), (timer) {
+    _alarmCheckTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
       if (_scheduledAlarms.isEmpty) return;
       _checkAndTriggerAlarms();
     });
@@ -195,15 +251,36 @@ class NotificationService {
   }
   
   /// Directly trigger alarm ringing screen
-  /// Only called when app is in foreground
+  /// Called when app is in foreground - navigates to alarm ringing screen
   void _triggerAlarm(Alarm alarm) {
-    // Show notification
+    // Build payload for navigation
+    final payload = _buildPayload(alarm);
+    
+    // Navigate to alarm ringing screen if navigator is ready
+    final state = navigatorKey.currentState;
+    if (state != null) {
+      state.pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (context) => AlarmRingingScreen(
+            label: alarm.label,
+            time: alarm.formattedTimeWithPeriod,
+            alarmId: alarm.id,
+            snoozeMinutes: alarm.snoozeMinutes,
+            soundName: alarm.sound,
+            soundPath: alarm.soundPath,
+          ),
+        ),
+        (route) => route.settings.name == '/' || route.settings.name == '/home',
+      );
+    }
+    
+    // Also show notification as backup
     showAlarmRinging(alarm.label.isEmpty ? '⏰ Alarm' : '⏰ ${alarm.label}', alarm.id);
   }
 
   /// Build a rich payload string that encodes all alarm info
   String _buildPayload(Alarm alarm) {
-    return '${alarm.id}|${alarm.label}|${alarm.formattedTimeWithPeriod}|${alarm.snoozeMinutes}|${alarm.sound}';
+    return '${alarm.id}|${alarm.label}|${alarm.formattedTimeWithPeriod}|${alarm.snoozeMinutes}|${alarm.sound}|${alarm.soundPath}';
   }
 
   Future<void> scheduleAlarm(Alarm alarm) async {

@@ -6,11 +6,9 @@ import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 import '../models/alarm.dart';
 import '../providers/alarm_provider.dart';
-import 'sound_picker_screen.dart';
 import '../widgets/ui_components.dart';
 import '../widgets/time_gradient.dart';
 import '../services/ringtone_picker_service.dart';
-import '../services/alarm_wallpaper_service.dart';
 import '../services/alarm_sound_service.dart';
 
 class AddEditAlarmScreen extends StatefulWidget {
@@ -828,21 +826,36 @@ class _AddEditAlarmScreenState extends State<AddEditAlarmScreen> {
       snoozeMinutes: _snoozeMinutes,
     );
 
-    // Save alarm data first (fast sync operation)
+    // Save alarm data
     final provider = context.read<AlarmProvider>();
-    if (widget.alarm != null) {
-      provider.updateAlarm(alarm);
-    } else {
-      provider.addAlarm(alarm);
-    }
-
-    // Pop immediately for fast UI response
-    Navigator.pop(context);
+    () async {
+      try {
+        if (widget.alarm != null) {
+          await provider.updateAlarm(alarm);
+        } else {
+          await provider.addAlarm(alarm);
+        }
+      } catch (e) {
+        debugPrint('AddEditAlarmScreen: saveAlarm error: $e');
+      }
+      if (mounted) {
+        Navigator.pop(context);
+      }
+    }();
   }
 
   void _deleteAlarm() {
-    context.read<AlarmProvider>().deleteAlarm(widget.alarm!.id);
-    Navigator.pop(context);
+    final id = widget.alarm!.id;
+    () async {
+      try {
+        await context.read<AlarmProvider>().deleteAlarm(id);
+      } catch (e) {
+        debugPrint('AddEditAlarmScreen: deleteAlarm error: $e');
+      }
+      if (mounted) {
+        Navigator.pop(context);
+      }
+    }();
   }
 
   Future<void> _testAlarm() async {

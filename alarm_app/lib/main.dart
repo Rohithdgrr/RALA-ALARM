@@ -8,7 +8,6 @@ import 'package:home_widget/home_widget.dart';
 import 'models/app_settings.dart';
 import 'providers/alarm_provider.dart';
 import 'screens/alarm_list_screen.dart';
-import 'screens/splash_screen.dart';
 import 'services/battery_service.dart';
 import 'services/notification_service.dart';
 import 'services/boot_receiver.dart';
@@ -157,7 +156,7 @@ class AlarmApp extends StatelessWidget {
                 ),
               ),
             ),
-            home: const SplashScreen(),
+            home: const AlarmListScreen(),
             routes: {
               '/home': (context) => const AlarmListScreen(),
             },

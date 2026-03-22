@@ -300,10 +300,18 @@ class AlarmSoundService {
   }
 
   bool _isLocalFile(String sound) {
-    return sound.startsWith('/') ||
-        sound.startsWith('file://') ||
-        sound.contains('\\') ||
-        (sound.contains('/') && !sound.startsWith('default_'));
+    // Must be a real file path - check for drive letters (Windows), root paths (Unix/macOS)
+    // or file:// scheme. Exclude asset names and default ringtone names.
+    if (sound.startsWith('file://')) return true;
+    if (sound.startsWith('/')) {
+      // Unix/macOS absolute path - check it's not an asset path
+      return !sound.startsWith('assets/');
+    }
+    // Windows drive letter path (e.g., C:\Users\...)
+    if (sound.length >= 3 && sound[1] == ':' && sound[2] == '\\') return true;
+    // Backslash path on Windows
+    if (sound.startsWith('\\')) return true;
+    return false;
   }
 
   Future<void> _playFromUrl(AudioPlayer player, String url) async {

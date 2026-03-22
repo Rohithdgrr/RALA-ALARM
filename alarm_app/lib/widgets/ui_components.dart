@@ -183,14 +183,17 @@ class _GradientIconButtonState extends State<GradientIconButton>
 
   @override
   Widget build(BuildContext context) {
+    final isEnabled = widget.onPressed != null;
     return GestureDetector(
-      onTap: widget.onPressed,
-      onTapDown: (_) => _controller.forward(),
-      onTapUp: (_) {
-        _controller.reverse();
-        widget.onPressed?.call();
-      },
-      onTapCancel: () => _controller.reverse(),
+      onTap: null,
+      onTapDown: isEnabled ? (_) => _controller.forward() : null,
+      onTapUp: isEnabled
+          ? (_) {
+              _controller.reverse();
+              widget.onPressed?.call();
+            }
+          : null,
+      onTapCancel: isEnabled ? () => _controller.reverse() : null,
       child: AnimatedBuilder(
         animation: _controller,
         builder: (context, child) {
@@ -201,7 +204,9 @@ class _GradientIconButtonState extends State<GradientIconButton>
               height: widget.size,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: widget.gradientColors,
+                  colors: isEnabled
+                      ? widget.gradientColors
+                      : [Colors.grey.shade500, Colors.grey.shade600],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -212,7 +217,8 @@ class _GradientIconButtonState extends State<GradientIconButton>
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: widget.gradientColors[0].withOpacity(0.4),
+                    color: (isEnabled ? widget.gradientColors[0] : Colors.black)
+                        .withOpacity(0.4),
                     blurRadius: 12,
                     offset: const Offset(0, 4),
                   ),

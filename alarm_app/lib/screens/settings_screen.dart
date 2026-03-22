@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:audioplayers/audioplayers.dart';
 import '../models/app_settings.dart';
 import '../services/ringtone_picker_service.dart';
+import '../services/alarm_sound_service.dart';
 import '../widgets/ui_components.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -888,14 +889,35 @@ class _RingtonePreviewSheetState extends State<_RingtonePreviewSheet> {
       await widget.audioPlayer.pause();
     } else {
       try {
+        // Check if it's a URL (YouTube or other)
         if (widget.ringtonePath.startsWith('http')) {
-          await widget.audioPlayer.play(UrlSource(widget.ringtonePath));
-        } else if (widget.ringtonePath.startsWith('default_')) {
-          // Play default asset
-          await widget.audioPlayer.play(AssetSource('sounds/alarm_sound.mp3'));
-        } else {
-          // Play local file
+          if (widget.ringtonePath.contains('youtube.com') || widget.ringtonePath.contains('youtu.be')) {
+            // YouTube URL - need to download first via AlarmSoundService
+            final soundService = AlarmSoundService();
+            await soundService.playPreview(widget.ringtonePath);
+          } else {
+            // Direct URL
+            await widget.audioPlayer.play(UrlSource(widget.ringtonePath));
+          }
+        } 
+        // Check if it's an asset ringtone
+        else if (AlarmSoundService.assetRingtones.containsKey(widget.ringtonePath)) {
+          final assetPath = AlarmSoundService.assetRingtones[widget.ringtonePath]!['asset'] as String;
+          await widget.audioPlayer.play(AssetSource(assetPath.replaceFirst('assets/', '')));
+        }
+        // Check if it's an in-app ringtone
+        else if (AlarmSoundService.inAppRingtones.containsKey(widget.ringtonePath)) {
+          // Generate and play WAV from frequencies
+          final soundService = AlarmSoundService();
+          await soundService.playPreview(widget.ringtonePath);
+        }
+        // Check if it's a local file (has path separators)
+        else if (widget.ringtonePath.contains('/') || widget.ringtonePath.contains('\\')) {
           await widget.audioPlayer.play(DeviceFileSource(widget.ringtonePath));
+        } else {
+          // Fallback: try playing as an in-app ringtone
+          final soundService = AlarmSoundService();
+          await soundService.playPreview(widget.ringtonePath);
         }
       } catch (e) {
         if (mounted) {

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -15,6 +14,7 @@ class AlarmRingingScreen extends StatefulWidget {
   final String alarmId;
   final int snoozeMinutes;
   final String? soundName;
+  final String? soundPath;
 
   const AlarmRingingScreen({
     super.key,
@@ -23,6 +23,7 @@ class AlarmRingingScreen extends StatefulWidget {
     required this.alarmId,
     this.snoozeMinutes = 10,
     this.soundName,
+    this.soundPath,
   });
 
   @override
@@ -122,13 +123,14 @@ class _AlarmRingingScreenState extends State<AlarmRingingScreen>
       _vibrateEnabled = alarm.vibrate;
       await _soundService.playAlarmSound(alarm);
     } else {
-      // Fallback: create a default alarm to play
-      final defaultAlarm = Alarm(
+      // Fallback: create alarm using widget parameters (includes soundPath)
+      final fallbackAlarm = Alarm(
         id: widget.alarmId,
         time: DateTime.now(),
         sound: widget.soundName ?? 'Default',
+        soundPath: widget.soundPath ?? '',
       );
-      await _soundService.playAlarmSound(defaultAlarm);
+      await _soundService.playAlarmSound(fallbackAlarm);
     }
 
     // Start vibration pattern
@@ -167,7 +169,8 @@ class _AlarmRingingScreenState extends State<AlarmRingingScreen>
     HapticFeedback.mediumImpact();
     
     if (mounted) {
-      Navigator.of(context).pushReplacementNamed('/home');
+      // Navigate to home route
+      Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
     }
   }
 
@@ -181,7 +184,8 @@ class _AlarmRingingScreenState extends State<AlarmRingingScreen>
     HapticFeedback.lightImpact();
     
     if (mounted) {
-      Navigator.of(context).pushReplacementNamed('/home');
+      // Navigate to home route
+      Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
     }
   }
 

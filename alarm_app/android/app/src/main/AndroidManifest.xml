@@ -64,6 +64,8 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="es.antonborri.home_widget.action.UPDATE"/>
+                <action android:name="es.antonborri.home_widget.action.LAUNCH"/>
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"

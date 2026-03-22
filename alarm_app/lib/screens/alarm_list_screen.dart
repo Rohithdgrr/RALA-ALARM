@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/alarm.dart';
 import '../providers/alarm_provider.dart';
+import '../services/notification_service.dart';
 import 'add_edit_alarm_screen.dart';
 import 'settings_screen.dart';
 import '../widgets/ui_components.dart';
@@ -25,6 +26,9 @@ class _AlarmListScreenState extends State<AlarmListScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      NotificationService().showPendingAlarm();
+    });
     _timer = Timer.periodic(const Duration(seconds: 30), (_) {
       if (mounted) setState(() {});
     });
